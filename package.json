@@ -1,0 +1,43 @@
+{
+  "name": "generator-yemiancheng",
+  "version": "1.0.0",
+  "description": "yemiancheng's project generator",
+  "files": [
+    "generators/github"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "yeoman",
+    "generator",
+    "yemiancheng"
+  ],
+  "scripts": {
+    "lint": "eslint --fix --report-unused-disable-directives .",
+    "test": "mocha",
+    "commit": "node ./tool/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymc-github/generator-yemiancheng.git"
+  },
+  "author": "yemiancheng <ymc.github@gmail.com> (https://github.com/YMC-GitHub)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ymc-github/generator-yemiancheng/issues"
+  },
+  "homepage": "https://github.com/ymc-github/generator-yemiancheng#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/lint": "^8.1.0",
+    "@commitlint/load": "^8.1.0",
+    "@commitlint/read": "^8.1.0",
+    "commitlint-config-yemiancheng": "^1.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-yemiancheng": "^1.0.0",
+    "fs-extra": "^8.1.0",
+    "mocha": "^6.2.0",
+    "yeoman-assert": "^3.1.1",
+    "yeoman-generator": "^4.0.1",
+    "yeoman-test": "^2.0.0"
+  }
+}
