@@ -21,14 +21,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ymc-github/generator-yemiancheng.git"
+    "url": "git+https://github.com/ymc-github/generator.git"
   },
   "author": "yemiancheng <ymc.github@gmail.com> (https://github.com/YMC-GitHub)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ymc-github/generator-yemiancheng/issues"
+    "url": "https://github.com/ymc-github/generator/issues"
   },
-  "homepage": "https://github.com/ymc-github/generator-yemiancheng#readme",
+  "homepage": "https://github.com/ymc-github/generator#readme",
   "dependencies": {},
   "devDependencies": {
     "@commitlint/lint": "^8.1.0",
