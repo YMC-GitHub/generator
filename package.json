@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "yemiancheng's project generator",
   "files": [
-    "generators/github"
+    "generators/github",
+    "generators/vscode",
+    "generators/editorconfig",
+    "generators/license"
   ],
   "keywords": [
     "yeoman-generator",
