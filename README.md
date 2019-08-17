@@ -15,6 +15,7 @@ yo yemiancheng:vscode
 yo yemiancheng:editorconfig
 yo yemiancheng:license
 yo yemiancheng:eslint
+yo yemiancheng:prettier
 ```
 
 ### 选项
