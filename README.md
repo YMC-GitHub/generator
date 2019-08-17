@@ -16,6 +16,7 @@ yo yemiancheng:editorconfig
 yo yemiancheng:license
 yo yemiancheng:eslint
 yo yemiancheng:prettier
+yo yemiancheng:package
 ```
 
 ### 选项
@@ -26,3 +27,5 @@ yo yemiancheng:prettier
 --generators
 --local-only
 ```
+
+
