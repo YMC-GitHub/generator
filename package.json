@@ -35,6 +35,7 @@
     "@commitlint/load": "^8.1.0",
     "@commitlint/read": "^8.1.0",
     "commitlint-config-yemiancheng": "^1.0.0",
+    "conventional-changelog": "^3.1.10",
     "eslint": "^6.1.0",
     "eslint-config-yemiancheng": "^1.0.0",
     "fs-extra": "^8.1.0",
