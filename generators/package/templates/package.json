@@ -1,0 +1,51 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "a project builded by yemiancheng",
+  "files": [
+    "dist",
+    "package.json",
+    "readme.md",
+    "doc-usage-**"
+  ],
+  "keywords": [
+    "javascript",
+    "yemiancheng"
+  ],
+  "scripts": {
+    "dev:dist": "rollup -wm --config build/rollup.dev.config.js",
+    "build": "node build/rollup.pro.config.js",
+    "lint": "eslint --fix --report-unused-disable-directives .",
+    "test": "rollup --config build/rollup.dev.config.js && mocha --require @babel/register",
+    "test:unit": "mocha --require @babel/register",
+    "format": "eslint --fix ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= github_name %>/<%= name %>.git"
+  },
+  "author": "<%= author %> <<%= email %>> (https://github.com/<%= github_name %>)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/<%= github_name %>/<%= name %>/issues"
+  },
+  "homepage": "https://github.com/<%= github_name %>/<%= name %>#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/lint": "^8.1.0",
+    "@commitlint/read": "^8.1.0",
+    "babel-preset-airbnb": "^4.0.1",
+    "chai": "^4.2.0",
+    "commitlint-config-yemiancheng": "^1.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-yemiancheng": "^1.0.0",
+    "mocha": "^6.2.0",
+    "mochawesome": "^4.0.1",
+    "nyc": "^14.1.1",
+    "uglify-js": "^3.6.0"
+  }
+}
