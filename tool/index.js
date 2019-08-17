@@ -7,7 +7,7 @@ const { addFile, commit } = require('./git');
 const CONFIG = require('../commitlint.config.js');
 const fileListStr = `
 tool/index.js
-package.json
+build/change-log.js
 `;
 const fileListArr = fileListStr.split('\n').map(v => v.trim()).filter(v => (v !== ''));
 // console.log(fileListArr);
