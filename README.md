@@ -11,6 +11,7 @@ npm install --global generator-yemiancheng
 yo --generators
 # 使用
 yo yemiancheng:github
+yo yemiancheng:vscode
 ```
 
 ### 选项
