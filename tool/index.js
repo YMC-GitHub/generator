@@ -6,8 +6,6 @@ const { addFile, commit } = require('./git');
 
 const CONFIG = require('../commitlint.config.js');
 const fileListStr = `
-package.json
-generators/
 tool/index.js
 README.md
 `;

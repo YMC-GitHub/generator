@@ -13,6 +13,7 @@ yo --generators
 yo yemiancheng:github
 yo yemiancheng:vscode
 yo yemiancheng:editorconfig
+yo yemiancheng:editorconfig
 ```
 
 ### 选项
