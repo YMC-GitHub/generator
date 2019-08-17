@@ -13,7 +13,8 @@ yo --generators
 yo yemiancheng:github
 yo yemiancheng:vscode
 yo yemiancheng:editorconfig
-yo yemiancheng:editorconfig
+yo yemiancheng:license
+yo yemiancheng:eslint
 ```
 
 ### 选项
