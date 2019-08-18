@@ -19,6 +19,7 @@ yo yemiancheng:prettier
 yo yemiancheng:package
 yo yemiancheng:husky
 yo yemiancheng:lint-staged
+yo yemiancheng:stylelint
 ```
 
 ### 选项
