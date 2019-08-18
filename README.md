@@ -17,6 +17,8 @@ yo yemiancheng:license
 yo yemiancheng:eslint
 yo yemiancheng:prettier
 yo yemiancheng:package
+yo yemiancheng:husky
+yo yemiancheng:lint-staged
 ```
 
 ### 选项
