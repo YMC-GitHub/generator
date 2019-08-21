@@ -6,7 +6,12 @@
     "generators/github",
     "generators/vscode",
     "generators/editorconfig",
-    "generators/license"
+    "generators/license",
+    "generators/prettier",
+    "generators/package",
+    "generators/husky",
+    "generators/lint-staged",
+    "generators/stylelint"
   ],
   "keywords": [
     "yeoman-generator",
@@ -17,7 +22,8 @@
   "scripts": {
     "lint": "eslint --fix --report-unused-disable-directives .",
     "test": "mocha",
-    "commit": "node ./tool/index.js"
+    "commit": "node ./tool/index.js",
+    "change-log": "node ./build/change-log.js"
   },
   "repository": {
     "type": "git",
