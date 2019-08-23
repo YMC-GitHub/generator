@@ -1,26 +1,39 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-useless-constructor */
 const conventionalChangelog = require('conventional-changelog');
 const fs = require('fs');
-
-// console.log(conventionalChangelog({ preset: 'angular' }));
-// conventionalChangelog({ preset: 'angular' }).pipe(process.stdout);
-
-const writableStream = fs.createWriteStream('CHANGELOG.md', 'utf-8');
-conventionalChangelog({ preset: 'angular' }).pipe(writableStream);
-// fs.writeFileSync('CHANGELOG.md', conventionalChangelog({ preset: 'angular' }));
+// v0.0.1
 /*
-writableStream.once('open', () => {
-  console.log('通道已经打开');
-});
-writableStream.once('error', (err) => {
-  console.log(err);
-});
-writableStream.once('close', () => {
-  console.log('通道已经关闭');
-});
-writableStream.write('我爱你，');
-writableStream.write('我爱你，');
-writableStream.write('我爱你，');
-
-// 4\. 写入内容
-writableStream.write(conventionalChangelog({ preset: 'angular' }));
+console.log(conventionalChangelog({ preset: 'angular' }));
+conventionalChangelog({ preset: 'angular' }).pipe(process.stdout);
 */
+
+// v1.0.0
+/*
+const writableStream = fs.createWriteStream('CHANGELOG.md', { encoding: 'utf-8', flags: 'a+' });
+conventionalChangelog({ preset: 'angular' }).pipe(writableStream);
+*/
+// 缓存旧的
+const cache = fs.readFileSync('CHANGELOG.md');
+/*
+let data = '';
+const readerStream = fs.createReadStream('CHANGELOG.md');
+readerStream.on('data', (chunk) => {
+  data += chunk;
+});
+readerStream.on('end', () => {
+  console.log(data);
+});
+*/
+// 获取新的
+const newData = conventionalChangelog({ preset: 'angular' });
+
+const result = fs.createWriteStream('CHANGELOG.md', { encoding: 'utf-8', flags: 'w' });
+// 写入新的
+newData.pipe(result);
+// 写入旧的
+result.on('finish', () => {
+  // console.log('写入完成。');
+  const a = fs.createWriteStream('CHANGELOG.md', { encoding: 'utf-8', flags: 'a' });
+  a.write(cache);
+});
