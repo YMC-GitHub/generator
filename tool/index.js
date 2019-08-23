@@ -7,8 +7,8 @@ const { addFile, commit } = require('./git');
 const CONFIG = require('../commitlint.config.js');
 const fileListStr = `
 tool/index.js
-tool/npmViewPkg.js
-tool/npm.js
+build/jianshu-reference.js
+build/jianshu-table.js
 `;
 const fileListArr = fileListStr.split('\n').map(v => v.trim()).filter(v => (v !== ''));
 // console.log(fileListArr);
