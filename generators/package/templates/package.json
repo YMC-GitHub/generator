@@ -1,5 +1,5 @@
 {
-  "name": "<%= name %>",
+  "name": "<%= npm_name %>",
   "version": "1.0.0",
   "description": "a project builded by yemiancheng",
   "files": [
@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/<%= github_name %>/<%= name %>.git"
+    "url": "git+https://github.com/<%= github_user %>/<%= github_repo_name %>.git"
   },
-  "author": "<%= author %> <<%= email %>> (https://github.com/<%= github_name %>)",
+  "author": "<%= author %> <<%= email %>> (https://github.com/<%= github_user %>)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/<%= github_name %>/<%= name %>/issues"
+    "url": "https://github.com/<%= github_user %>/<%= github_repo_name %>/issues"
   },
-  "homepage": "https://github.com/<%= github_name %>/<%= name %>#readme",
+  "homepage": "https://github.com/<%= github_user %>/<%= github_repo_name %>#readme",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.5.5",

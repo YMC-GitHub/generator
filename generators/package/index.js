@@ -4,11 +4,14 @@ function makeNpmRepoName(ctx) {
   const suffix = ctx.options.suffix;
   const author = ctx.answers.author;
   if (suffix) {
-    NPM_REPO_NAME = `${NPM_REPO_NAME}-${suffix}`;
-  } else {
     NPM_REPO_NAME = `${NPM_REPO_NAME}-${author}`;
+  } else {
+    NPM_REPO_NAME = `${NPM_REPO_NAME}`;
   }
   return NPM_REPO_NAME;
+}
+function makeGitRepoName(ctx) {
+  return ctx.answers.name;
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -23,7 +26,7 @@ module.exports = class extends Generator {
     super(args, opts);
 
     // This makes `suffix` a required argument.
-    this.argument('suffix', { type: String, required: false });
+    this.argument('suffix', { type: Boolean, required: false, default: true });
     // this.option('suffix'); // This method adds support for a `--suffix` flag
     // this.log(this.options.suffix);
 
@@ -66,8 +69,9 @@ module.exports = class extends Generator {
       this.templatePath('package.json'),
       this.destinationPath('package.json'),
       {
-        name: makeNpmRepoName(this),
-        github_name: this.options.github_user,
+        npm_name: makeNpmRepoName(this),
+        github_user: this.options.github_user,
+        github_repo_name: makeGitRepoName(this),
         author: this.answers.author,
         email: this.options.github_user_email
       }
