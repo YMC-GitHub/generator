@@ -1,3 +1,13 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/ymc-github/generator/compare/v1.2.0...v1.3.0) (2019-08-23)
+
+
+### Features
+
+* **package:** updating a package config ([47dbd8c](https://github.com/ymc-github/generator/commit/47dbd8c))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/ymc-github/generator/compare/v1.1.0...v1.2.0) (2019-08-21)
 
