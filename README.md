@@ -20,6 +20,7 @@ yo yemiancheng:package
 yo yemiancheng:husky
 yo yemiancheng:lint-staged
 yo yemiancheng:stylelint
+yo yemiancheng:babel
 ```
 
 ### 选项
