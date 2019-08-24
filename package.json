@@ -1,6 +1,6 @@
 {
   "name": "generator-yemiancheng",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "yemiancheng's project generator",
   "files": [
     "generators/github",
