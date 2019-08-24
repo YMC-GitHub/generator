@@ -25,6 +25,7 @@ yo yemiancheng:rollup
 yo yemiancheng:webpack
 yo yemiancheng:karma
 yo yemiancheng:browserslist
+yo yemiancheng:postcss
 ```
 
 ### 选项
