@@ -11,7 +11,14 @@
     "generators/package",
     "generators/husky",
     "generators/lint-staged",
-    "generators/stylelint"
+    "generators/stylelint",
+    "generators/babel",
+    "generators/rollup",
+    "generators/webpack",
+    "generators/karma",
+    "generators/browserslist",
+    "generators/postcss",
+    "generators/trivas-ci"
   ],
   "keywords": [
     "yeoman-generator",
