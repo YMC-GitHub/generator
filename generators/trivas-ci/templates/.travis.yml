@@ -1,0 +1,118 @@
+# 操作系统
+os:
+  - "linux"
+  - "windows"
+  - "osx"
+# 编程语言
+language: node_js
+
+# 语言版本
+node_js:
+  - "10"
+  - "8"
+  - "6"
+  - "4"
+  - "0.12"
+  - "0.10"
+# 设置脚本
+before_install:
+  - echo "now is in before_install Phase"
+  - echo $YMC_GITHUB_REPO
+  - echo $YMC_GITHUB_BRANCH
+  #- echo $PROJECT_VERSION
+  - echo $ESLINT_VERSION
+install:
+  - echo "now is in install Phase"
+  - npm install
+before_script:
+  - echo "now is in before_script Phase"
+script:
+  - echo "now is in script Phase"
+  - ./node_modules/.bin/eslint --version
+  - npm run lint --silent
+  - npm run test --silent
+after_success:
+  - echo "now is in after_success Phase"
+after_failure:
+  - echo "now is in after_failure Phase"
+before_deploy:
+  - echo "now is in before_deploy Phase"
+  - "echo 'ready?'"
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: echo "now is in deploy Phase"
+    on:
+      branch: master
+after_deploy:
+  - echo "now is in after_deploy Phase"
+after_script:
+  - echo "now is in after_script Phase"
+
+# 环境变量
+env:
+  matrix:
+  #- PROJECT_VERSION="1.0.*"
+  - ESLINT_VERSION=6
+  - ESLINT_VERSION=5
+  - ESLINT_VERSION=4
+  - ESLINT_VERSION=3
+  - ESLINT_VERSION=2
+  global:
+  - secure: xIvWJTlo0AHd46kQwWspBDtEOaE4bRhgtG6baQCudSUVQtN1OyPv+Mz7TGRjvK+VvJngKFA74UUS9/dh+8zFaveVpDtYFkcqmFaUhVm0wQW2AWKQi3PRUVhYKka/xofFbO/7bOpiM49X3GrVZGOVgUs8V1w9rdtY0Aa89npHROown2vjn1XGAsdaJXgzXor2ywTNeapYYhXZMJMfgKKsPgUZIhpJ31mAz6nJuyoFe1Xw6tf9785Pb0/x2pqaRV9bUAZKC1Xxh9Lhg5Udw3/sThmUqV9fW3rLl5Lix40F5dwrn30eIigEFAIgHR0Jtc0EAVtlSFxaDflNxxjrd5IzgtvtwEZMOElbE0g/J1j0GQXyBFDzvBg5lKYT9ADaNGNMY8eEHmL+xnBW/sta4t1ww3x1KZSuUAQLMiQl6+2BfqYL5VqTMUwSeH6qnkZwuMSxVNkX6/ZQtlG8pexGMlwYKMz1AvhROTaFliiiEmshgdg/a6XJfvuzN36wuNqE175ZxSEf2WXggEp+e5/z2O3geZXyfQRyXdYL048FmhFji1BBbBTSpLSF7RN066SK5szw4EyaoUhwz2jhOQx0ja8COtitrvTx/XD8U+k+LDhhJukFGBV3eTl17H/F3LaQRzAysMXQU5n+DEh1LlLa4gChzXV/vaNo4aLiosQ4Mg47SMM=
+  - secure: aO7ahTQx/zANJdxM3I78Xnr2PhK0KKqJ3Aob16Ka22/rZa72jnZiowA3gVFfpmNz05ykd0ghuk6Di3RjFDPeGlC1/vVQy0vC51v5e5difJ1B18WwYtoR92HTXRhf1MBBP9kuOF2fs+05U3Ky/cm7wvntcq1yOcUF74i+ufChkOlhbTvmBsPBTeJmLNmg/vjn9mvCLkPMQCgez4MlMwWLihwB0lVaMjXkghXynwYZN8r45DaH7aY6tNZbbUmBcyodE4vGxNtmfUSNG4/Dm/d62Cpi/i04OeAeifaIyjJ0oTWvawAjs2DxGxRM5Vj0vp0bMMeRO7ueWl6m3Yed8DK7Wk2oNJRn2+PcWLCNh0LAlfLJyY9TyR6IRurT1kLCz0h8rKP5M7qaGL+vOUWacPhKQ3W3Ah9tG8LPb0FSyjvLgwW6AO7Z6WSFyqBePIWK5V1AfYqsYP53okYyzDsbHrP6voVWDMlcqImd5lyYiCBRRigIJae60bv7P9vOybaudTZCzO5JcwAGq+4kxUkck3lk6/VredGBZzRIwdT2ozpXKssPkYFuyBshxDPF3OPD/Zx5dJx+waTrvHrkxj4HIXP2PfgmR3EBys8/J/F0L26oEUSPOgFk2mSwtoZ80b9s7mJbaMGkFgW2HZKMiJS9YOaKF7geEbshVAmQ32M+YGsGsvM=
+# 缓存依赖
+cache: npm
+#
+addons:
+  ssh_known_hosts:
+  - github.com
+
+matrix:
+  fast_finish: true
+  allow_failures:
+  # for linux/win/mac nodejs:6 eslint:2-6
+  # SyntaxError: Unexpected token
+  - node_js: '6'
+    env: ESLINT_VERSION=2
+  - node_js: '6'
+    env: ESLINT_VERSION=3
+  - node_js: '6'
+    env: ESLINT_VERSION=4
+  - node_js: '6'
+    env: ESLINT_VERSION=5
+  - node_js: '6'
+    env: ESLINT_VERSION=6
+  # for linux/win/mac nodejs:0-4 eslint:2-6
+  # The command "npm run lint --silent" exited with 1.
+  # The command "npm run test --silent" exited with 1.
+  - node_js: '4'
+    env: ESLINT_VERSION=2
+  - node_js: '4'
+    env: ESLINT_VERSION=3
+  - node_js: '4'
+    env: ESLINT_VERSION=4
+  - node_js: '4'
+    env: ESLINT_VERSION=5
+  - node_js: '4'
+    env: ESLINT_VERSION=6
+  - node_js: '0.12'
+    env: ESLINT_VERSION=2
+  - node_js: '0.12'
+    env: ESLINT_VERSION=3
+  - node_js: '0.12'
+    env: ESLINT_VERSION=4
+  - node_js: '0.12'
+    env: ESLINT_VERSION=5
+  - node_js: '0.12'
+    env: ESLINT_VERSION=6
+  - node_js: '0.10'
+    env: ESLINT_VERSION=2
+  - node_js: '0.10'
+    env: ESLINT_VERSION=3
+  - node_js: '0.10'
+    env: ESLINT_VERSION=4
+  - node_js: '0.10'
+    env: ESLINT_VERSION=5
+  - node_js: '0.10'
+    env: ESLINT_VERSION=6
