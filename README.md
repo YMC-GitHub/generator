@@ -23,6 +23,7 @@ yo yemiancheng:stylelint
 yo yemiancheng:babel
 yo yemiancheng:rollup
 yo yemiancheng:webpack
+yo yemiancheng:karma
 ```
 
 ### 选项
