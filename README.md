@@ -26,6 +26,7 @@ yo yemiancheng:webpack
 yo yemiancheng:karma
 yo yemiancheng:browserslist
 yo yemiancheng:postcss
+yo yemiancheng:trivas-ci
 ```
 
 ### 选项

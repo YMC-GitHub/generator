@@ -7,7 +7,7 @@ const { addFile, commit } = require('./git');
 const CONFIG = require('../commitlint.config.js');
 const fileListStr = `
 tool/index.js
-generators/trivas-ci/
+README.md
 `;
 const fileListArr = fileListStr.split('\n').map(v => v.trim()).filter(v => (v !== ''));
 // console.log(fileListArr);
