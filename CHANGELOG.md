@@ -1,3 +1,19 @@
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/ymc-github/generator/compare/v1.3.0...v1.4.0) (2019-08-24)
+
+
+### Features
+
+* **babel:** adding a babel config ([109b81c](https://github.com/ymc-github/generator/commit/109b81c))
+* **browserslist:** adding a browserslist config ([2358a09](https://github.com/ymc-github/generator/commit/2358a09))
+* **karma:** adding a karma config ([7823e75](https://github.com/ymc-github/generator/commit/7823e75))
+* **postcss:** adding a postcss config ([7876f23](https://github.com/ymc-github/generator/commit/7876f23))
+* **rollup:** adding a rollup config ([976e48d](https://github.com/ymc-github/generator/commit/976e48d))
+* **trivas-ci:** adding a trivas-ci config ([c989dee](https://github.com/ymc-github/generator/commit/c989dee))
+* **webpack:** adding a webpack config ([f4b468d](https://github.com/ymc-github/generator/commit/f4b468d))
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/ymc-github/generator/compare/v1.2.0...v1.3.0) (2019-08-23)
 
