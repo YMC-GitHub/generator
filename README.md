@@ -22,6 +22,7 @@ yo yemiancheng:lint-staged
 yo yemiancheng:stylelint
 yo yemiancheng:babel
 yo yemiancheng:rollup
+yo yemiancheng:webpack
 ```
 
 ### 选项
