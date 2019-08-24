@@ -24,6 +24,7 @@ yo yemiancheng:babel
 yo yemiancheng:rollup
 yo yemiancheng:webpack
 yo yemiancheng:karma
+yo yemiancheng:browserslist
 ```
 
 ### 选项
