@@ -1,0 +1,43 @@
+{
+  "name": "<%= npm_name %>",
+  "version": "1.0.0",
+  "description": "a project builded by yemiancheng",
+  "files": [
+    "build/webpack.config.js",
+    "package.json",
+    "README.md",
+    "build/dev-server.js",
+    "build/dev-client.js",
+    "build/page-reload.js",
+    "build/config.js"
+  ],
+  "keywords": [
+    "javascript",
+    "yemiancheng"
+  ],
+  "scripts": {
+    "study": "webpack --config build/webpack.config.js --json --profile > stats.json",
+    "dev:webpack4": "cross-env NODE_ENV=development webpack --config build/webpack.config.js",
+    "pro:webpack4": "cross-env NODE_ENV=production webpack --config build/webpack.config.js  --progress --hide-modules",
+    "dev:simple-server": "cross-env SERVER_TYPE=simple webpack-dev-server --config build/webpack.config.js",
+    "dev:complex-server": "cross-env SERVER_TYPE=complex node build/dev-server.js",
+    "dev:custom-server": "nodemon --watch build/dev-server.js --watch build/webpack.config.js --exec \"cross-env SERVER_TYPE=complex node build/dev-server.js\"",
+    "dev": "npm run dev:complex-server",
+    "pro": "npm run pro:webpack4",
+    "lint": "eslint src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= github_user %>/<%= github_repo_name %>.git"
+  },
+  "author": "<%= author %> <<%= email %>> (https://github.com/<%= github_user %>)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/<%= github_user %>/<%= github_repo_name %>/issues"
+  },
+  "homepage": "https://github.com/<%= github_user %>/<%= github_repo_name %>#readme",
+  "dependencies": {},
+  "devDependencies": {
+    <%- lib %>
+  }
+}
