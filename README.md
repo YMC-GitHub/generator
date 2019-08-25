@@ -27,6 +27,7 @@ yo yemiancheng:karma
 yo yemiancheng:browserslist
 yo yemiancheng:postcss
 yo yemiancheng:trivas-ci
+yo yemiancheng:css-lib
 ```
 
 ### 选项
