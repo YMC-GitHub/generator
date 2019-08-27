@@ -1,5 +1,3 @@
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-useless-constructor */
 const conventionalChangelog = require('conventional-changelog');
 const fs = require('fs');
 // v0.0.1

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const main = (id, lib, download, future) => `${lib}[^${id}]|${download}|${future}|`;
 module.exports = main;
 

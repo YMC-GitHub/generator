@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const viewPkg = require('../tool/npmViewPkg');
 const main = (id, author, lib, npm, github) => `[^${id}]:${author}.${lib} [npm](${npm}) [github](${github})`;
 module.exports = main;
