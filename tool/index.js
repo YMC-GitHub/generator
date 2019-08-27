@@ -15,7 +15,8 @@ Promise.all([read({ edit: '.git/COMMIT_EDITMSG' }), load(CONFIG)])
   })
   .then((result) => {
     if (result.valid) {
-      return addFile(fileListArr).then(() => commit(result.input));
+      console.log(result.input);
+      return addFile(fileListArr).then(() => commit(['--message', result.input]));
     }
     // eslint-disable-next-line
     console.log(result);

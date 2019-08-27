@@ -24,7 +24,7 @@ function status(args, execaOptions) {
   return execa('git', ['status', ...(args || [])], execaOptions || {});
 }
 function commit(args, execaOptions) {
-  return execa('git', ['commit', '--message', ...(args || [])], execaOptions || {});
+  return execa('git', ['commit', ...(args || [])], execaOptions || {});
 }
 
 function remote(args, execaOptions) {
