@@ -2,7 +2,9 @@
 const read = require('@commitlint/read');
 const load = require('@commitlint/load');
 const lint = require('@commitlint/lint');
-const { addFile, commit } = require('./git');
+const addFile = require('./git-add');
+const commit = require('./git-commit');
+
 
 const CONFIG = require('../commitlint.config.js');
 const fileListArr = require('./config-file-list');
@@ -16,7 +18,7 @@ Promise.all([read({ edit: '.git/COMMIT_EDITMSG' }), load(CONFIG)])
   .then((result) => {
     if (result.valid) {
       console.log(result.input);
-      return addFile(fileListArr).then(() => commit(['--message', result.input]));
+      return addFile(fileListArr).then(() => commit(result.input));
     }
     // eslint-disable-next-line
     console.log(result);
