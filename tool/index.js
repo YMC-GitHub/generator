@@ -5,12 +5,7 @@ const lint = require('@commitlint/lint');
 const { addFile, commit } = require('./git');
 
 const CONFIG = require('../commitlint.config.js');
-const fileListStr = `
-tool/index.js
-README.md
-`;
-const fileListArr = fileListStr.split('\n').map(v => v.trim()).filter(v => (v !== ''));
-// console.log(fileListArr);
+const fileListArr = require('./config-file-list');
 
 Promise.all([read({ edit: '.git/COMMIT_EDITMSG' }), load(CONFIG)])
   .then((res) => {
