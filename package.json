@@ -28,6 +28,7 @@
   ],
   "scripts": {
     "lint": "eslint --fix --report-unused-disable-directives .",
+    "lint:js": "eslint --fix --report-unused-disable-directives --ext .js tool build",
     "test": "mocha",
     "commit": "node ./tool/index.js",
     "change-log": "node ./build/change-log.js"
