@@ -5,42 +5,50 @@ execa("git",["log","-n 1"]).then(result => {
     console.log(result.stdout);
 }).catch(err => console.log(err));
 */
-function init() {
-  return execa('git', ['init']);
+function gitCmdBuilder(cmd, args, execaOptions) {
+  return execa('git', [cmd, ...(args || [])], execaOptions || {});
 }
-function addFile(file) {
-  return execa('git', ['add', ...(file || [])]);
+function init(args, execaOptions) {
+  return execa('git', ['init', ...(args || [])], execaOptions || {});
 }
-function addAll() {
-  return execa('git', ['add', '.']);
+function add(args, execaOptions) {
+  return execa('git', ['add', ...(args || [])], execaOptions || {});
 }
-function status() {
-  return execa('git', ['status']);
+function addFile(args, execaOptions) {
+  return execa('git', ['add', ...(args || [])], execaOptions || {});
+}
+function addAll(args, execaOptions) {
+  return execa('git', ['add', '.', ...(args || [])], execaOptions || {});
+}
+function status(args, execaOptions) {
+  return execa('git', ['status', ...(args || [])], execaOptions || {});
+}
+function commit(args, execaOptions) {
+  return execa('git', ['commit', '--message', ...(args || [])], execaOptions || {});
 }
 
-function commit(message) {
-  return execa('git', ['commit', '-m', message]);
+function remote(args, execaOptions) {
+  return execa('git', ['status', ...(args || [])], execaOptions || {});
 }
-function remote(opts) {
-  return execa('git', ['remote', ...(opts || [])]);
+function push(args, execaOptions) {
+  return execa('git', ['status', ...(args || [])], execaOptions || {});
 }
-function push(opts) {
-  return execa('git', ['push', ...(opts || [])]);
+function mv(args, execaOptions) {
+  return execa('git', ['status', ...(args || [])], execaOptions || {});
 }
-function mv(opts) {
-  return execa('git', ['mv', ...(opts || [])]);
+function stash(args, execaOptions) {
+  return execa('git', ['status', ...(args || [])], execaOptions || {});
 }
-function stash(opts) {
-  return execa('git', ['stash', ...(opts || [])]);
+function tag(args, execaOptions) {
+  return execa('git', ['status', ...(args || [])], execaOptions || {});
 }
-function tag(opts) {
-  return execa('git', ['tag', ...(opts || [])]);
+function diff(args, execaOptions) {
+  return execa('git', ['status', ...(args || [])], execaOptions || {});
 }
-function diff(opts) {
-  return execa('git', ['diff', ...(opts || [])]);
-}
+
 module.exports = {
   init,
+  add,
   addFile,
   addAll,
   status,
@@ -50,5 +58,6 @@ module.exports = {
   mv,
   stash,
   tag,
-  diff
+  diff,
+  gitCmdBuilder
 };

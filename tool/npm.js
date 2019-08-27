@@ -1,16 +1,16 @@
 /* eslint-env node */
 const execa = require('execa');
-function config(opts) {
-  return execa('npm', ['config', ...(opts || [])]);
-}
-function view(opts) {
-  return execa('npm', ['view', ...(opts || [])]);
-}
-function install(opts) {
-  return execa('npm', ['install', ...(opts || [])]);
-}
-module.exports = {
-  config,
-  view,
-  install
-};
+const keysStr = `
+config
+view
+install
+list
+init
+`;
+const keysArr = keysStr.split('\n').map(v => v.trim()).filter(v => (v !== ''));
+const Engine = {};
+
+keysArr.forEach((cmd) => {
+  Engine[cmd] = (args, execaOptions) => execa('npm', [cmd, ...(args || [])], execaOptions || {});
+});
+module.exports = Engine;
