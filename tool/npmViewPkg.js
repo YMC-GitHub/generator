@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-env node */
 const { view } = require('./npm');
 const util = require('util');

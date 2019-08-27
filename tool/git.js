@@ -36,6 +36,9 @@ function stash(opts) {
 function tag(opts) {
   return execa('git', ['tag', ...(opts || [])]);
 }
+function diff(opts) {
+  return execa('git', ['diff', ...(opts || [])]);
+}
 module.exports = {
   init,
   addFile,
@@ -46,5 +49,6 @@ module.exports = {
   push,
   mv,
   stash,
-  tag
+  tag,
+  diff
 };

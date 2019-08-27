@@ -6,7 +6,11 @@ function config(opts) {
 function view(opts) {
   return execa('npm', ['view', ...(opts || [])]);
 }
+function install(opts) {
+  return execa('npm', ['install', ...(opts || [])]);
+}
 module.exports = {
   config,
-  view
+  view,
+  install
 };
