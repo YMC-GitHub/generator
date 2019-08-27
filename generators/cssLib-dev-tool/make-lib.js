@@ -1,4 +1,5 @@
 /* eslint-disable camelcase */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 const makeSpaceLength = (space, length) => {
   const result = [];
   for (let i = 0; i < length; i++) {
@@ -41,6 +42,14 @@ const main = (data) => {
     `;
     addTask(cache, v => result.push(v));
   }
+  // let webpack uses babel
+  if (babel && webpack) {
+    const cache = `
+    "babel-loader": "^8.0.6",
+    "babel-plugin-istanbul": "^5.2.0",
+    `;
+    addTask(cache, v => result.push(v));
+  }
   if (webpack) {
     const cache = `
     "webpack": "^4.39.2",
@@ -54,9 +63,13 @@ const main = (data) => {
     addTask(cache, v => result.push(v));
   }
   if (webpack_handles_vue) {
-    result.push('"vue-loader": "^14.2.4"');
-    result.push('"vue-style-loader": "^4.1.2"');
-    result.push('"vue-template-compiler": "^2.6.10"');
+    const cache = `
+    "vue-loader": "^14.2.4",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "@vue/test-utils": "^1.0.0-beta.10",
+    `;
+    addTask(cache, v => result.push(v));
   }
   if (webpack_handles_css) {
     const cache = `
@@ -109,13 +122,13 @@ const main = (data) => {
   if (karma) {
     const cache = `
     "karma": "^4.2.0",
-    "karma-webpack": "^2.0.9",
+    "karma-webpack": "^4.0.2",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-coverage": "^1.3.0",
+    "karma-coverage": "^2.0.1",
     "karma-mocha": "^1.3.0",
     "karma-spec-reporter": "0.0.32",
     "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^2.2.0"
+    "karma-chrome-launcher": "^3.1.0",
     `;
     addTask(cache, v => result.push(v));
   }
@@ -131,6 +144,7 @@ const main = (data) => {
   if (stylelint) {
     const cache = `
     "stylelint": "^10.1.0",
+    "stylelint-config-yemiancheng": "^1.0.0",
     `;
     addTask(cache, v => result.push(v));
   }
