@@ -1,12 +1,11 @@
 
 /* eslint-env node */
 const fs = require('fs');
-const SHIELDS_URL = 'https://img.shields.io';
+const { GITHUB_REPO, GITHUB_USER } = require('./config-repo');
 
-const GITHUB_REPO = 'write-api-doc';
-const GITHUB_USER = 'ymc-github';
+const SHIELDS_URL = 'https://img.shields.io';
 const TWITTER_USER = 'yemiancheng';
-const PATH_TO_SAVE = '../write-api-doc/shields-status.md';
+const PATH_TO_SAVE = `../${GITHUB_REPO}/shields-status.md`;
 
 function githubCommitActivity({
   color = 'ff69b4', logo = 'Github', logoColor = 'ff69b4', style = 'popout-square',

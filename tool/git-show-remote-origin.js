@@ -1,4 +1,6 @@
 /* eslint-env node */
 const { remote } = require('./git');
 const { logAsync } = require('./console');
-logAsync(remote(['show', 'origin']));
+const repoConfig = require('./config-repo');
+
+logAsync(remote(['show', 'origin'], { cwd: repoConfig.dir }));

@@ -1,5 +1,5 @@
-const SRC = 'tool/npm-set-registry.js';
-const DES = 'tool/npm-config-registry.js';
+const SRC = 'tool/tag.js';
+const DES = 'tool/git-tag.js';
 // 强制模式
 // Force renaming or moving of a file even if the target exists
 const FORCE = '--force';
