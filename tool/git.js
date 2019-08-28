@@ -28,22 +28,22 @@ function commit(args, execaOptions) {
 }
 
 function remote(args, execaOptions) {
-  return execa('git', ['status', ...(args || [])], execaOptions || {});
+  return execa('git', ['remote', ...(args || [])], execaOptions || {});
 }
 function push(args, execaOptions) {
-  return execa('git', ['status', ...(args || [])], execaOptions || {});
+  return execa('git', ['push', ...(args || [])], execaOptions || {});
 }
 function mv(args, execaOptions) {
-  return execa('git', ['status', ...(args || [])], execaOptions || {});
+  return execa('git', ['mv', ...(args || [])], execaOptions || {});
 }
 function stash(args, execaOptions) {
-  return execa('git', ['status', ...(args || [])], execaOptions || {});
+  return execa('git', ['stash', ...(args || [])], execaOptions || {});
 }
 function tag(args, execaOptions) {
-  return execa('git', ['status', ...(args || [])], execaOptions || {});
+  return execa('git', ['tag', ...(args || [])], execaOptions || {});
 }
 function diff(args, execaOptions) {
-  return execa('git', ['status', ...(args || [])], execaOptions || {});
+  return execa('git', ['diff', ...(args || [])], execaOptions || {});
 }
 
 module.exports = {
