@@ -1,3 +1,14 @@
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/ymc-github/generator/compare/v1.4.0...v1.5.0) (2019-08-28)
+
+
+### Features
+
+* **css-lib:** adding a css-lib package.json ([e7ad4e7](https://github.com/ymc-github/generator/commit/e7ad4e7))
+* **css-lib:** updating his deps ([002da77](https://github.com/ymc-github/generator/commit/002da77))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/ymc-github/generator/compare/v1.3.0...v1.4.0) (2019-08-24)
 
