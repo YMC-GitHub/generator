@@ -23,6 +23,8 @@ const { logAsync } = require('./console');
 const TAG_VALUE = 'v1.0.0';
 const FLOW = [
   'list',
+  'create',
+  'list',
   // 'show'
 ];
 const repoConfig = require('./config-repo');
@@ -39,7 +41,7 @@ function hasTag(value) {
 //----------------------------
 const task = {
   create() {
-    return hasTag(TAG_VALUE).then(bool => bool && logAsync(create([TAG_VALUE], { cwd: repoConfig.dir })));
+    return hasTag(TAG_VALUE).then(bool => !bool && logAsync(create([TAG_VALUE], { cwd: repoConfig.dir })));
   },
   list() {
     return logAsync(list([], { cwd: repoConfig.dir }));
