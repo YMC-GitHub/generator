@@ -66,4 +66,13 @@ const task = {
 //----------------------------
 // main
 //----------------------------
-FLOW.forEach(type => task[type] && task[type]());
+// 顺序执行：有一组任务，任务的调用按某种顺序进行。
+// 乱序执行：有一组任务，任务的调用顺序是不固定的
+// 顺序执行并不等于继发！
+// 继发执行：有一组任务，上一个任务调用执行结束后，再进行调用下一个。
+let chain = Promise.resolve(null);
+FLOW.forEach((type) => {
+  if (task[type]) {
+    chain = chain.then(v => task[type]());
+  }
+});
