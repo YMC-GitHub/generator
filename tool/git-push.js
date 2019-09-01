@@ -1,14 +1,10 @@
 /* eslint-env node */
-const { push } = require('./git');
+const { push: pushTo } = require('./git');
 const { logAsync } = require('./console');
 const repoConfig = require('./config-repo');
+const pushConfig = require('./git-push-config');
 
 
-const IS_FIRST = false;
 let result;
-if (IS_FIRST) {
-  result = push(['--set-upstream', 'origin', 'master'], { cwd: repoConfig.dir });
-} else {
-  result = push(['origin', 'master'], { cwd: repoConfig.dir });
-}
+result = pushTo(pushConfig, { cwd: repoConfig.dir });
 logAsync(result);
