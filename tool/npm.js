@@ -6,6 +6,7 @@ view
 install
 list
 init
+uninstall
 `;
 const keysArr = keysStr.split('\n').map(v => v.trim()).filter(v => (v !== ''));
 const Engine = {};
