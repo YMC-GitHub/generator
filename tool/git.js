@@ -48,6 +48,9 @@ function diff(args, execaOptions) {
 function log(args, execaOptions) {
   return execa('git', ['log', ...(args || [])], execaOptions || {});
 }
+function checkout(args, execaOptions) {
+  return execa('git', ['checkout', ...(args || [])], execaOptions || {});
+}
 module.exports = {
   init,
   add,
@@ -62,5 +65,6 @@ module.exports = {
   tag,
   diff,
   log,
+  checkout,
   gitCmdBuilder
 };
