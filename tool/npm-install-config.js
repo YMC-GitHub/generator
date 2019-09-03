@@ -1,15 +1,16 @@
 // store
 const libListStr = `
-"@babel/core": "^7.5.5",
-"@babel/plugin-transform-runtime": "^7.5.5",
-"@babel/preset-env": "^7.5.5",
-"@babel/runtime"
+"webpack-dev-server": "^2.9.1"
 `;
 let libListArr;
-const type = '--save-dev';
+const cmdArgs = `
+--save-dev
+`;
+const optionsListArr = cmdArgs.split('\n').filter(v => (v.trim() !== '' && !/^\/\//.test(v)));
+
 
 // master
-const toCmdArgForExeca = () => [type, ...libListArr];
+const toCmdArgForExeca = () => [optionsListArr, ...libListArr];
 const toLibListArr = () => libListStr.trim()
   .replace(/,/ig, '').split('\n')
   .filter(v => (v.trim() !== ''))
@@ -28,7 +29,7 @@ const toLibListArr = () => libListStr.trim()
 libListArr = toLibListArr();
 module.exports = {
   lib: libListArr,
-  type,
+  cmdArgs,
   toCmdArgForExeca,
   toLibListArr
 };

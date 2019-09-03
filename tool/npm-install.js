@@ -2,6 +2,6 @@
 const { logAsync } = require('./console');
 const { install } = require('./npm');
 const repoConfig = require('./config-repo');
-const { lib, type } = require('./npm-install-config');
+const { lib, cmdArgs } = require('./npm-install-config');
 
-logAsync(install([type, ...lib], { cwd: repoConfig.dir }));
+logAsync(install([cmdArgs, ...lib], { cwd: repoConfig.dir }));
