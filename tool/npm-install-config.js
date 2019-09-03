@@ -1,16 +1,17 @@
 // store
 const libListStr = `
-"webpack-dev-server": "^2.9.1"
+"@babel/core": "^7.5.5",
+"@babel/preset-env": "^7.5.5",
 `;
 let libListArr;
-const cmdArgs = `
+const optionsListStr = `
 --save-dev
 `;
-const optionsListArr = cmdArgs.split('\n').filter(v => (v.trim() !== '' && !/^\/\//.test(v)));
+const optionsListArr = optionsListStr.split('\n').filter(v => (v.trim() !== '' && !/^\/\//.test(v)));
 
 
 // master
-const toCmdArgForExeca = () => [optionsListArr, ...libListArr];
+const toCmdArgForExeca = () => [...optionsListArr, ...libListArr];
 const toLibListArr = () => libListStr.trim()
   .replace(/,/ig, '').split('\n')
   .filter(v => (v.trim() !== ''))
@@ -27,9 +28,10 @@ const toLibListArr = () => libListStr.trim()
   });
 
 libListArr = toLibListArr();
+console.log(`npm install ${optionsListArr.join(' ')} ${libListArr.join(' ')}`);
 module.exports = {
   lib: libListArr,
-  cmdArgs,
+  cmdArgs: optionsListArr,
   toCmdArgForExeca,
   toLibListArr
 };
